@@ -23,7 +23,3 @@ public class Book {
                 '}';
     }
 }
-
-
-
-Hello I was here
