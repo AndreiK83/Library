@@ -1,8 +1,11 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Console extends Main {
     private Scanner sc;
     private Book book;
+    private List<Book> bookList;
+
 
     public Console() {
         sc = new Scanner(System.in);
@@ -10,10 +13,11 @@ public class Console extends Main {
     }
 
     private void mainMenu() {
-        while (true){
+        while (true) {
             switch (drawMainMenu()) {
                 case 1:
                     addBook();
+                    remouveBook();
 //                    categories();
 //                    app.insert(asocProp);
                     break;
@@ -36,18 +40,24 @@ public class Console extends Main {
         }
     }
 
-    private void addBook() {
+
+    public void addBook() {
         String title;
         String writerFirstName;
         String writerLastName;
-        boolean isAvailable = true;
+
         System.out.println("Insert the title");
         title = sc.nextLine();
         System.out.println("Insert the firstname of writer");
         writerFirstName = sc.nextLine();
         System.out.println("Insert the lastname of writer");
         writerLastName = sc.nextLine();
-        this.book = new Book(title,writerFirstName,writerLastName,isAvailable);
+        this.book = new Book(title, writerFirstName, writerLastName, true);
+        bookList.add(book);
+        System.out.println(bookList);
+    }
+
+    private void remouveBook() {
     }
 
 
